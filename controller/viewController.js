@@ -130,3 +130,8 @@ export const PasswordforgotRequest = catchAsyncError(async (req, res, next) => {
 export const forgotPasswordPage = catchAsyncError(async (req, res, next) => {
   res.render("user/passwordforgot");
 });
+
+// Chat Router
+export const chatPage = catchAsyncError(async (req, res, next) => {
+  res.render("chat/chat");
+});

@@ -18,6 +18,7 @@ import {
   activateNewUserAccount,
   forgotPasswordPage,
   PasswordforgotRequest,
+  chatPage,
 
   // Middlewares
   protectRoute,
@@ -26,6 +27,8 @@ import {
 } from "./../controller/viewController";
 
 import { createBookingCheckOut } from "./../controller/bookingController";
+
+import { chatConnection } from "./../controller/chatController";
 
 export const viewRouter = Router();
 
@@ -59,3 +62,6 @@ viewRouter.route("/activate/:id").get(activateNewUserAccount);
 viewRouter.route("/resetPassword/:token").get(forgotPasswordPage);
 
 viewRouter.route("/passwordresetRequest").get(PasswordforgotRequest);
+
+// Chat
+viewRouter.route("/chat").get(chatPage);

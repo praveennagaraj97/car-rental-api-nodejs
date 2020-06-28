@@ -29,7 +29,6 @@ import { hotelReviewRouter } from "./route/hotelReviewRouter";
 import { viewRouter } from "./route/viewRouter";
 import { todoRouter } from "./route/todoRouter";
 import { socialMediaRouter } from "./route/socialMediaRouter";
-import { chatRouter } from "./route/chatRouter";
 import { bookingRouter } from "./route/bookingRouter";
 
 // Multer SetUp Take FileSize
@@ -93,7 +92,6 @@ app.use(process.env.DEFAULT_URL + "/blog/reviewOnUs", reviewRouter);
 app.use(process.env.DEFAULT_URL + "/hotelReview", hotelReviewRouter);
 app.use(process.env.DEFAULT_URL + "/todo", todoRouter);
 app.use(process.env.DEFAULT_URL + "/socialmedia", socialMediaRouter);
-app.use(process.env.DEFAULT_URL + "/chat", chatRouter);
 app.use(process.env.DEFAULT_URL + "/booking", bookingRouter);
 
 app.use("/v1/ExploreDreamDiscover", viewRouter);

@@ -48,6 +48,9 @@ import {
 } from "./../middleware/imageProcessing";
 
 import { sendRequest, respondToRequest } from "../handlers/socialMediaHandler";
+import { catchAsyncError } from "../utils/catchAsyncError";
+import { AppError } from "../utils/appError";
+import { id } from "date-fns/locale";
 
 // Before Someone Joins They Should Have Account With Us As It is EDD's Social Media Service
 
@@ -144,4 +147,57 @@ export const replyToComment = createDocument(SMReplyCommnet, {
 
 export const getPostOfMineAndFriends = readAllDocument(SMPost, {
   message: "Your Feed",
+});
+
+export const getMyFriends = catchAsyncError(async (req, res, next) => {
+  const currentUserProfileId = await SMProfile.findOne({
+    userId: req.loggedUser._id,
+  });
+
+  const friends = await SMFriends.find({
+    friends: { $all: [currentUserProfileId._id] },
+  });
+
+  const friendList = [];
+  // Filter Friends
+  friends.forEach((el) => {
+    if (String(el.friends[0]) == String(currentUserProfileId._id)) {
+      friendList.push(el.friends[1]);
+    }
+  });
+
+  const result = [];
+  for (let each of friendList) {
+    const friendsDetail = await SMProfile.findById(each).select("-userId");
+    result.push(friendsDetail);
+  }
+  if (result.length < 1) return next(new AppError("No Friends Found", 200));
+
+  res.status(200).json({
+    result,
+  });
+});
+
+export const getAllSocialMediaUser = catchAsyncError(async (req, res, next) => {
+  const user = await SMProfile.find({
+    userId: { $ne: req.loggedUser._id },
+  }).select("-userId");
+
+  if (!user) return next(new AppError("Sorry No users Found", 500));
+
+  res.status(200).json(user);
+});
+
+export const getFriendsStatus = catchAsyncError(async (req, res, next) => {
+  // console.log(req.body);
+  const status = await SMFriends.findOne({
+    friends: [req.body.profileId, req.body.friend],
+  });
+
+  if (!status) return next(new AppError("Not Friends", 400));
+
+  res.status(200).json({
+    data: status,
+    status: "Friends",
+  });
 });

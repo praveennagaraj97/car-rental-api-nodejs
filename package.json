@@ -4,7 +4,8 @@
   "description": "Website which allows users to enjoy travelling and happy moments with Our Services",
   "main": "server.js",
   "scripts": {
-    "start": "babel-node server",
+    "start": "nodemon --exec babel-node server",
+    "start-dev": "nodemon --exec babel-node server",
     "test": "nodemon --exec node test/pushNotifications"
   },
   "repository": {

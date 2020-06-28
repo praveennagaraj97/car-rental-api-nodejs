@@ -16,37 +16,58 @@ let message, handle, btn, output, feedback;
 message = document.getElementById("message");
 handle = document.getElementById("handle");
 btn = document.getElementById("send");
-
+user = document.getElementById("user").href.split("Discover/")[1];
+friend = document.getElementById("friend").value;
 // Btn Disable if empty
 
 message.addEventListener("change", () => {
   success();
 });
 
+const friendstatus = async (userId, friendId) => {
+  // Make Http requests
+  try {
+    const result = await axios({
+      method: "POST",
+      url: `/api/v1/ExploreDreamDiscover/socialmedia/getfriendStatus`,
+      data: {
+        profileId: userId,
+        friend: friendId,
+      },
+    });
+    if (result) {
+      if (result.data.status == "Friends") {
+        socket.emit("chat", {
+          message: message.value,
+          profileId: result.data.data.friends[0],
+          friendId: result.data.data.friends[1],
+        });
+        document.querySelector("#message").value = "";
+      } else {
+        document.getElementById("handle").innerHTML =
+          "Message Will Not be sent to Non Friends";
+      }
+    }
+  } catch (err) {
+    document.getElementById("err").innerHTML =
+      "Message Will Not be sent to Non Friends";
+    setTimeout(() => {
+      document.getElementById("err").innerHTML = "";
+    }, 5000);
+  }
+};
+
 //Events Emit
 
 btn.addEventListener("click", () => {
-  socket.emit("chat", {
-    message: message.value,
-  });
-  document.querySelector("#message").value = "";
+  const userId = user;
+  const friendId = friend;
+  friendstatus(userId, friendId);
 });
 
 //Listen For Events
-socket.on("chat", (data) => {
-  let currentmsgCount = data[0].message.length;
-  const lastmsg = document.getElementById(currentmsgCount - 2);
-
-  const newMsg = `<div id="outgoing">
-                      <li class="sent" id=${currentmsgCount - 1}>
-                      <img src="http://emilcarlsson.se/assets/mikeross.png" alt="">
-                      <p id="last-sent">${
-                        data[0].message[currentmsgCount - 1]
-                      }</p>
-                    </li></div>`;
-
-  const m = `<li id=${currentmsgCount - 1}>${
-    data[0].message[currentmsgCount - 1]
-  }</li>`;
-  document.querySelector("#incoming-msg").innerHTML += newMsg;
+socket.on("chat", function (data) {
+  document.getElementById(
+    "output"
+  ).innerHTML += `<p><strong> ${data.profileId}</strong> : ${data.message} </p>`;
 });

@@ -43,6 +43,9 @@ import {
   //Security Access
   protectRoute,
   preFillFriendId,
+  getMyFriends,
+  getAllSocialMediaUser,
+  getFriendsStatus,
 } from "./../controller/socialMediaController";
 
 export const socialMediaRouter = Router();
@@ -124,3 +127,13 @@ socialMediaRouter
 socialMediaRouter
   .route("/myFeed")
   .get(protectRoute, profile, setmyfeedSortedByLatest, getPostOfMineAndFriends);
+
+socialMediaRouter.route("/getMyFriends").get(protectRoute, getMyFriends);
+
+socialMediaRouter
+  .route("/getAllSocialMediaUsers")
+  .get(protectRoute, getAllSocialMediaUser);
+
+socialMediaRouter
+  .route("/getfriendStatus")
+  .post(protectRoute, getProfileId, getFriendsStatus);

@@ -14,54 +14,19 @@ html(lang="en")
 block content
     link(rel="stylesheet", href="/styles/chatapp.css")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js")
-    div(class="chat-box")
-        div(id="frame")
-            div(id="sidepanel")
-                div(id="profile")
-                    div(class="wrap")
-                        img(id="profile-img" src=`${ chats[0].profileId.profilePic }` class="online" alt="")
-                        p=chats[0].profileId.profileName
-                        i(class="fa fa-chevron-down expand-button" aria-hidden="true")
-                    
-                
-                div(id="search")
-                    label(for="")
-                        i(class="fa fa-search" aria-hidden="true")
-                    input(type="text" placeholder="Search contacts...")
-                
-                div(id="contacts")
-                    ul
-                        //-Friends List 
-                        li(class="contact")
-                            div(class="wrap")
-                                img(src=`${ chats[0].friendId.profilePic }` alt="")
-                                div(class="meta")
-                                    p(class="name")=chats[0].friendId.profileName
-                                    p(class="preview") You just got LITT up, Mike.
-    
-            div(class="content")
-                div(class="contact-profile")
-                    img(src=`${ chats[0].friendId.profilePic }` alt="")
-                    p=chats[0].friendId.profileName
-                -var msgcount = 0;
-                div(class="messages")
-                    ul(id="incoming-msg")
-                        for content in chats
-                            for msg in content.message
-                                div(id="outgoing")
-                                    li(class="sent" id=msgcount++)
-                                        img(src="http://emilcarlsson.se/assets/mikeross.png" alt="")
-                                        p(id="last-sent")=msg
-                                
-                                    div(id="incoming")
-                                        li(class="replies")
-                                            img(src="http://emilcarlsson.se/assets/mikeross.png" alt="")
-                                            img(src="http://emilcarlsson.se/assets/mikeross.png" alt="")
-                                            p(id="last-sent")=msg
-                    
-                div(class="message-input" )
-                    div(class="wrap")
-                        input(type="text" id="message" placeholder="Write your message..." required)
-                        i(class="fa fa-paperclip attachment" aria-hidden="true")
-                    button(type="button" id="send" class="btn btn-success" disable) Send
+    input(type="text", name="FriendId" id="friend" placeholder="Enter Friend ID")
+    div(id="mario-chat")
+        div(id="chat-window")
+            div(id ="output")
+            div(id="feedback")
+        
+        h5(id="handle" name="userName")=user.username
+        a(id="user" href=user._id)
+        p(id="err")
+        input(type="text" id ="message" placeholder="Type message"  name="message")
+        button(id="send" type = "submit") Send
+
+
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js")
     script(src="/js/chatapp.js")
