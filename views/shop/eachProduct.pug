@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+html(lang="en")
+    head(style="")
+        meta(charset="UTF-8")
+        meta(content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type")
+        title 
+        link(rel="shortcut icon", href="/images/logo.png", type="image/x-icon")
+        link(rel="stylesheet", href="/styles/basePage.css")
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" )
+        link(href="https://fonts.googleapis.com/css2?family=Amita:wght@500&family=Bellota:ital,wght@1,300&family=Kaushan+Script&family=Berkshire+Swash&family=Metal+Mania&family=Mr+De+Haviland&display=swap" rel="stylesheet") 
+        link(href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,300&family=Metal+Mania&display=swap" rel="stylesheet")
+        link(rel="stylesheet", href="/styles/eachProduct.css")
+
+
+include ../header
+
+
+
+block content
+    h1(style="text-align:center")
+    script(src="https://js.stripe.com/v3/")
+
+    div(class="container")
+        div(class="row")
+            for img in product.productImages
+                div(class="column")
+                    img(src=`${img}` alt="Snow" style="width:100%")
+        table.center
+
+            tr
+                th Product Name : 
+                td=product.partName
+            tr
+                th Car Brand : 
+                td=product.carBrand
+            tr
+                th Product Category
+                td=product.productCategory
+            tr
+                th Part Price
+                td=product.partPrice
+
+            tr
+                th Product By
+                td=product.productBy
+            
+            tr
+                th Product Part Number
+                td=product.productPartNumber
+            tr
+                th Fits 
+                td=product.carBrand +" "+ product.carModel + " " + product.carVarient
+            
+            tr
+                th Description
+                td=product.productDetails
+            hr
+        
+    hr
+    if user
+        a(href=`/v1/ExploreDreamDiscover/checkout-shop/${product._id}` id="book-btn" class="btn btn-info" role="button" style="width: min-content;margin-left: 50%;") Buy Now
+    else
+        a(href="/v1/ExploreDreamDiscover/login" class="btn btn-info" role="button" style="width: min-content;margin-left: 50%;") Please Login To Buy
+    
+    hr
+    script(src="/js/shopstripe.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js")

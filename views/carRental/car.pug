@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+html(lang="en")
+    head(style="")
+        meta(charset="UTF-8")
+        meta(content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type")
+        title #{car.carname}
+        link(rel="shortcut icon", href="/images/logo.png", type="image/x-icon")
+        link(rel="stylesheet", href="/styles/basePage.css")
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" )
+        link(href="https://fonts.googleapis.com/css2?family=Amita:wght@500&family=Bellota:ital,wght@1,300&family=Kaushan+Script&family=Berkshire+Swash&family=Metal+Mania&family=Mr+De+Haviland&display=swap" rel="stylesheet") 
+        link(href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,300&family=Metal+Mania&display=swap" rel="stylesheet")
+        link(rel="stylesheet", href="/styles/eachProduct.css")
+
+
+include ../header
+
+
+
+block content
+    h1(style="text-align:center") Available Cars
+    script(src="https://js.stripe.com/v3/")
+    
+    for each in car.availablecars
+        div(class="container")
+
+            table.center
+
+                tr
+                    th Number Plate : 
+                    td=each.numberPlate
+                tr
+                    th Available Location : 
+                    td=each.availableLocation
+                tr
+                    th Colour : 
+                    td=each.colour
+                tr
+                    th  Model Year : 
+                    td=each.modelYear
+                hr
+                hr
+            div(class="row")
+            for img in each.carImages
+                div(class="column")
+                    img(src=`${img}` alt="Snow" style="width:100%")
+        hr
+        if user
+            a(href=`/v1/ExploreDreamDiscover/checkout-car/${each._id}` id="book-btn" class="btn btn-info" role="button" style="width: min-content;margin-left: 50%;") Book This Car
+        else
+            a(href="/v1/ExploreDreamDiscover/login" class="btn btn-info" role="button" style="width: min-content;margin-left: 50%;") Please Login To Book This Car
+        hr
+    script(src="/js/stripe.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js")

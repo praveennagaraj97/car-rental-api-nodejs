@@ -1,0 +1,67 @@
+include ../header
+<!DOCTYPE html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Explore Dream Discover 📍 #{title}
+        link(rel="stylesheet", href="/styles/basePage.css")
+        link(rel="shortcut icon"  href="/images/logo.png"  type="image/x-icon")
+        link(href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,300&family=Metal+Mania&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+
+
+block content
+    link(rel="stylesheet", href="/styles/chatapp.css")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js")
+    div(class="chat-box")
+        div(id="frame")
+            div(id="sidepanel")
+                div(id="profile")
+                    div(class="wrap")
+                        img(id="profile-img" src=`${ chats[0].profileId.profilePic }` class="online" alt="")
+                        p=chats[0].profileId.profileName
+                        i(class="fa fa-chevron-down expand-button" aria-hidden="true")
+                    
+                
+                div(id="search")
+                    label(for="")
+                        i(class="fa fa-search" aria-hidden="true")
+                    input(type="text" placeholder="Search contacts...")
+                
+                div(id="contacts")
+                    ul
+                        //-Friends List 
+                        li(class="contact")
+                            div(class="wrap")
+                                img(src=`${ chats[0].friendId.profilePic }` alt="")
+                                div(class="meta")
+                                    p(class="name")=chats[0].friendId.profileName
+                                    p(class="preview") You just got LITT up, Mike.
+    
+            div(class="content")
+                div(class="contact-profile")
+                    img(src=`${ chats[0].friendId.profilePic }` alt="")
+                    p=chats[0].friendId.profileName
+                -var msgcount = 0;
+                div(class="messages")
+                    ul(id="incoming-msg")
+                        for content in chats
+                            for msg in content.message
+                                div(id="outgoing")
+                                    li(class="sent" id=msgcount++)
+                                        img(src="http://emilcarlsson.se/assets/mikeross.png" alt="")
+                                        p(id="last-sent")=msg
+                                
+                                    div(id="incoming")
+                                        li(class="replies")
+                                            img(src="http://emilcarlsson.se/assets/mikeross.png" alt="")
+                                            img(src="http://emilcarlsson.se/assets/mikeross.png" alt="")
+                                            p(id="last-sent")=msg
+                    
+                div(class="message-input" )
+                    div(class="wrap")
+                        input(type="text" id="message" placeholder="Write your message..." required)
+                        i(class="fa fa-paperclip attachment" aria-hidden="true")
+                    button(type="button" id="send" class="btn btn-success" disable) Send
+    script(src="/js/chatapp.js")

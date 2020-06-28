@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "explore-dream-and-discover",
+  "private_key_id": "3f8e0425481bb2462a2f3ceb110d3e7c0f1477e2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDywRsCo3y1Hmf3\nxWaW5jPjMko6kNmukARNFB7xJ+oFGlkbLUujs+TbuTkYSesGzRTrnEHca8mCLdVj\ntj4aKb8Chus1Qj6YWBnMp/t3BZZDShi/915UehPIIC1uAdELOkrvVyneQYpon9FX\nREDdhAKRYh7/PdcsGGWrv+oA5pOgmq3q7dj03cofZ3Svh5zD5a04kUuDxN0Epval\nNQEnqb7hTcLO0VZGXK87H11p3L038rxuENWDow0mOZqnqaurTJaz8Ec0DLzkdtQR\nEzdvgf+ZpPzNieqUx55W0i7iPue6g/LOOBtIdSGFY/8zeiBAa0SmYbJFqvHHL6fz\nCgAC4WDJAgMBAAECggEALv4kWyyoW8x0znFjhHMwWLs3xOIdDa6Z8oziV4dFRXMe\nDEWGtrxAoatXyuSmT3T8Z4bidgfUpLN4M1sIZxqtPBE/r5nxEZ8+cVCUfKwzdDfA\nFktN8rcGJM/b04ec/tosPuxl8b1IzKuhhA31q5wePiQbQYhoYsQfTHH0m/OG4Qgn\n/OXQAgRdf4WaoJiUqZj76lG+n3NsQU3aReOLXa+4DeNi689P8BqCh2i0g2HCgd5S\nWTrRNDyDztzGqF5t6GOujbQEKA0MJNoCNff1FpNPxg3OkPKDJw/sDxjkEoIFTfdD\noTG+Gt28gctNg8ar3YUHhiCPRtPbGuSnQQwtkMfRvQKBgQD7lNMkSgYQRadoXaZh\nrlu2sCWJFb34Wv8kVUpqpPLfY+RYxSsDMsxjKLmM9Y1I6q9ZAg8YWsMdEbaQJDRO\nfFA93rxabs/zN+YfsA7nPyi1leLP+4k/PJqWQN/iKYXdXUYQmXXtePpJMnOj3kbh\nR66KwWJyyIeU7pi7Cu6WWVHZJQKBgQD3BJeVHdpQRhOauxi4uirlip9JWspzBdGe\nq6GoVradrOnJ8Tqd2YQgd7rFw1Q72tWP9HNgKnMF9g+PFWNJ3cKh6/pacxORt0wS\nNF5Sz7iKNdmev4w6IZtKKPIRu08PwyMLU2MWLJY5jG+49F6m9n/gfOOn4n4C1GMf\nyGSRVtdR1QKBgE4XkT7Hd4Bfjqp3v2i8zZ00qkIWLKTF4kLt8q6NyxIKmNvxP/u7\nLfRttMMLibKjnpBbckIWElCYqfmuM0pVjjbWR9MuaIBPzq/xX37qfQF4qDH1G1I0\nxqtzMcurJfFjvZbze8ad8dr8vSaVnZzaOlS52IxWsLdLJL+SkiK7UQu9AoGBAMNP\nJDNJGVajMdkD2fYlbMl1o6AyYyQzE5zrg7RAa7+b+nYrf/dTBv9M66Z2XOG+k2Fx\nHNCKf8vU1FSDyq+a4ct5c8eUeYKbdVBni7TafMT68whr14oXDFvEqDGQ8mA6IDlS\nQ2RC+Lyj56pLvZMyD8YFuVMC6DOAjqeQoMOx8CnJAoGBAOhJbYjGNVwawguFzIeH\ncTdjaRYEt3mIjoMaMScTxKrmp+rZ6BklnSABDvItXmufn6tvS+vUuoLCJFByD44r\nSNnPR+Y1LdjEje95mdGFliHRECPbWTHZv8wSZCtr+Xg8NUzF3TZBlUZlZ7/fm+xX\n96hzASZ2K0186ZbS9bRLP1p+\n-----END PRIVATE KEY-----\n",
+  "client_email": "praveen-109@explore-dream-and-discover.iam.gserviceaccount.com",
+  "client_id": "114279465921947100299",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/praveen-109%40explore-dream-and-discover.iam.gserviceaccount.com"
+}

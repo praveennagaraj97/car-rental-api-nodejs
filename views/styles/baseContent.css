@@ -1,0 +1,9 @@
+/* Static Content */
+.jumbotron {
+  color: white;
+  background-image: url("/images/EDDQuote.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}

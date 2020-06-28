@@ -1,0 +1,28 @@
+.map {
+  height: 600px;
+  width: 100%;
+  opacity: 0.6;
+  padding: 2.5%;
+}
+
+#map-container {
+  border-radius: 2px;
+}
+
+/* Distance Finder */
+
+.distance-calculator {
+  height: 350px;
+  text-align: -moz-center;
+}
+
+.directionsContainer {
+  position: relative;
+  width: 35%;
+  height: 95%;
+  overflow-y: auto;
+  align-items: center;
+  background: rgba(48, 22, 22, 0.301);
+  padding-left: 15px;
+  border-radius: 15%;
+}

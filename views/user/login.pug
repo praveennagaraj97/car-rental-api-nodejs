@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+html(lang="en")
+    head(style="")
+        meta(charset="UTF-8")
+        meta(content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type")
+        title Log In 🤼
+        link(rel="shortcut icon", href="/images/logo.png", type="image/x-icon")
+        link(rel="stylesheet", href="/styles/basePage.css")
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" )
+        link(href="https://fonts.googleapis.com/css2?family=Amita:wght@500&family=Bellota:ital,wght@1,300&family=Kaushan+Script&family=Berkshire+Swash&family=Metal+Mania&family=Mr+De+Haviland&display=swap" rel="stylesheet") 
+        link(href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,300&family=Metal+Mania&display=swap" rel="stylesheet")
+        link(rel="stylesheet", href="/styles/login.css")
+
+include ../header
+
+block content
+        
+        form(action="/v1/ExploreDreamDiscover/login" method="POST")
+            h1 Log In
+            label(for="mail") Email:
+            input(type="email" id="email" placeholder="Enter Email" name="email" required)
+            
+            label(for="password") Password:
+            input(type="password" id="password" placeholder="Enter Password" name="password" required)
+
+
+            button(type="submit") Log In
+            a(href="/v1/ExploreDreamDiscover/joinus") Don't Have Account? Register Now
+            br
+            a(href="/v1/ExploreDreamDiscover/passwordresetRequest") Forgot Password ?
+            p(id="errlog")
+            h4(id="loggedStatus")
+
+
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js")
+            script(src="/js/login.js")

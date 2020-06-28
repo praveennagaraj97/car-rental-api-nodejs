@@ -1,0 +1,41 @@
+<!DOCTYPE html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Explore Dream Discover 📍 #{title}
+        link(rel="stylesheet", href="/styles/basePage.css")
+        link(rel="shortcut icon"  href="/images/logo.png"  type="image/x-icon")
+        link(href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,300&family=Metal+Mania&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" )
+        
+
+        
+    body
+        //- Nav Bar
+        include header
+        
+        //- Map to Find Distance Between
+        block content
+            include ./mapping/map
+            include baseContent
+            block content
+            //- Blogs App
+            section(style="height=600px")
+                h1 Blog Section
+            //- Website Statistics
+            section
+                h1 Website Statistics
+        
+         
+
+
+        
+
+        include footer
+
+        
+        script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" )
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" )
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" )
+        script(src="https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AmNVSdH6zfn1uPo1iL4czV1igTM07gIw2uE6uXbHdFxF0JvgH1ndnWFE_LTInUHz" async defer)

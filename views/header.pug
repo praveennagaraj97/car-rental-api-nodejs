@@ -1,0 +1,41 @@
+header
+    nav
+        ul
+            li
+                a(href="/v1/ExploreDreamDiscover") EXPLORE DREAM DISCOVER 
+                    img(width="25px" height="25px" src="/images/logo.png" alt="Italian Trulli")
+            li
+                a()
+            li
+                a(href="/v1/ExploreDreamDiscover/rentcar") Rent Car
+            li
+                a(href="/home") Book Rooms
+            li
+                a(href="/home") Forum
+            li
+                a(href="/v1/ExploreDreamDiscover/buyparts") Car Parts
+            li
+                a()
+            li
+                a(href="/home") About Us
+
+            li
+                a(href="/home") Developers API
+            li
+                a() |
+            if user
+                li
+                    a(href="/v1/ExploreDreamDiscover/logout") Social Media
+                li
+                    a(href="/v1/ExploreDreamDiscover/logout") Log Out
+                li
+                    a(href=`/v1/ExploreDreamDiscover/me`)=user.username 
+                        img(src=`${user.profilePic}`, alt="", srcset="" width="35" height="35" style="border-radius: 22px; margin-left:18px")
+                
+                
+            else
+                li
+                    a(href="/v1/ExploreDreamDiscover/joinus") Join Us
+
+                li
+                    a(href="/v1/ExploreDreamDiscover/login") Login

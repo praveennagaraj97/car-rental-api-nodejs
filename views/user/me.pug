@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+html(lang="en")
+    head(style="")
+        meta(charset="UTF-8")
+        meta(content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type")
+        title=user.username.toUpperCase()
+        link(rel="shortcut icon", href="/images/logo.png", type="image/x-icon")
+        link(rel="stylesheet", href="/styles/basePage.css")
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" )
+        link(href="https://fonts.googleapis.com/css2?family=Amita:wght@500&family=Bellota:ital,wght@1,300&family=Kaushan+Script&family=Berkshire+Swash&family=Metal+Mania&family=Mr+De+Haviland&display=swap" rel="stylesheet") 
+        link(href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,300&family=Metal+Mania&display=swap" rel="stylesheet")
+
+include ../header
+
+block content
+    link(rel="stylesheet", href="/styles/me.css")
+    div(class="container emp-profile")
+        
+            div(class="row")
+                div(class="col-md-4")
+                    div(class="profile-img")
+                        img(src=`${user.profilePic}` alt="" width="195" height="195")
+                        
+
+                div(class="col-md-6")
+                    div(class="profile-head")
+                            h4=user.username
+                    
+                            h6=user.email
+
+                            p(class="proile-rating")=user.dateOfBirth
+
+                            ul(class="nav nav-tabs" id="myTab" role="tablist")
+                                li(class="nav-item")
+                                    a(class="nav-link active" id="home-tab" data-toggle="tab"  role="tab" aria-controls="home" aria-selected="true") About
+                    
+
+                div(class="col-md-2")
+                    input(type="submit" class="profile-edit-btn" href="" name="btnAddMore" value="Edit Profile")
+
+                
+
+                div(class="col-md-8" style="margin-left:30%")
+                    div(class="tab-content profile-tab" id="myTabContent" style="margin-left: 32px;")
+                        div(class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab")
+                                    div(class="row")
+                                        div(class="col-md-6")
+                                            label Name
+                                        
+                                        div(class="col-md-6")
+                                            p=user.username
+
+                                    div(class="row")
+                                        div(class="col-md-6")
+                                            label Contact Number
+                                        
+                                        div(class="col-md-6")
+                                            p=user.phone
+                                    div(class="row")
+                                        div(class="col-md-6")
+                                            label Gender
+                                        
+                                        div(class="col-md-6")
+                                            if user.gender
+                                                p=user.gender
+                                            else
+                                                p Not Updated 
+                                    div(class="row")
+                                        div(class="col-md-6")
+                                            label Age
+                                        
+                                        div(class="col-md-6")
+                                            if user.age
+                                                p=user.age
+                                            else
+                                                p Please Update Details
+                                    div(class="row")
+                                        div(class="col-md-6")
+                                            label Location
+                                        
+                                        div(class="col-md-6")
+                                            if user.currentLocation
+                                                p=user.currentLocation.city
+                                            else
+                                                p Please Turn On Location Service                                   

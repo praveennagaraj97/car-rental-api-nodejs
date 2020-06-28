@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body
+        form(action="/v1/ExploreDreamDiscover/signUp" method="POST")
+            h1 Sign Up
+
+            label(for="name") Name:
+            input(type="text" id="name" placeholder="Enter Username" name="username" required)
+
+            label(for="mail") Email:
+            input(type="email" id="mail" placeholder="Enter Email" name="email" required)
+
+            label(for="mail") Phone Number:
+            input(type="text" id="mail" placeholder="Enter Phone Number" name="phone" required)
+            
+            label(for="password") Password:
+            input(type="password" id="password" placeholder="Enter Password" name="password" required)
+
+            label(for="password") Confirm Password:
+            input(type="password" id="password" placeholder="Confirm Password" name="confirmPassword" required)
+
+            <button type="submit">Sign Up!</button>

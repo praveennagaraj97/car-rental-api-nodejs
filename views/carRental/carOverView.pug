@@ -1,0 +1,51 @@
+extends ../base
+
+block content
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous")
+    link(rel="stylesheet", href="/styles/carOverView.css")
+    
+
+    div(class="container" style="margin-left:50% ;")
+        div(class="dropdown")
+            button(class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Sort
+
+            div(class="dropdown-menu" aria-labelledby="dropdownMenuButton")
+                a(class="dropdown-item" href="/v1/ExploreDreamDiscover/rentcar?sort=price") Sort Price : Low To High
+                a(class="dropdown-item" href="/v1/ExploreDreamDiscover/rentcar?sort=-price") Sort Price : Hign To Low
+                a(class="dropdown-item" href="/v1/ExploreDreamDiscover/rentcar?sort=-fuelEconomy") Sort Fuel Economy : Hign To Low
+            hr(style="clear: both; visibility: hidden;")
+            div(class="dropdown")
+                        button(class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Filter
+
+                        div(class="dropdown-menu" aria-labelledby="dropdownMenuButton")
+                            a(href="http://")
+                            a(class="dropdown-item" href="/v1/ExploreDreamDiscover/rentcar?carType=SUV") SUV
+                            a(class="dropdown-item" href="/v1/ExploreDreamDiscover/rentcar?carType=Sedan") Sedan
+                            a(class="dropdown-item" href="/v1/ExploreDreamDiscover/rentcar?carType=Sportback") Sportsback
+                            a(class="dropdown-item" href="/v1/ExploreDreamDiscover/rentcar?carType=Hatchback") Hatchback
+
+    div(class="row")
+        for each in car
+            div(class="col-sm-6 col-md-4")
+                div(class="card")
+                    div(class="card-image" style=`background : url('${each.carCoverImage}');background-size: cover;/* margin-top: 3px; *//* border-bottom-left-radius: 28px; */border-radius: 10px;`)
+                    div(class="card-text" )
+                        span(class="date" )=each.modelYear
+                        h2(id="header-name")=each.carname
+                        
+                        hr
+                        h5=each.transmission
+                        h5=each.fuelType
+                        h5 ₹
+                            =each.price + " / Per Day"
+                        
+                        div(style="text-align:center")
+                            a( class="btn btn-primary" href=`/v1/ExploreDreamDiscover/rentcar/car:${each.slug}` role="button") View
+                        
+    nav(aria-label="Page navigation example")
+        
+        ul(class="pagination justify-content-center")
+            -var page = 1;
+            while page < pages+1
+                li(class="page-item")
+                a(class="page-link" href=`/v1/ExploreDreamDiscover/rentcar?page=${page}`)=page++

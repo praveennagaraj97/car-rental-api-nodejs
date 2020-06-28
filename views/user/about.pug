@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title=navbar.me[1]
+        link(href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,300&family=Metal+Mania&display=swap" rel="stylesheet")
+        link(rel="stylesheet", href="./../../styles/about.css")
+        link(rel="stylesheet", href="./../../styles/landingStyle.css")
+        
+    body
+        nav
+            ul
+                each val in navbar
+                    li
+                        a(href=val[0])=val[1]
+
+
+
+
+        script(src="/js/aboutpage.js")
