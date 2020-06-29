@@ -27,7 +27,7 @@
    By Default Page With 6 Items/Cars Will be Displayed.
    And User Can Book Car Using Stripe API - And Cash Booking Also Available.
    
-   Future Upgrade - Dynamic Booking Time
+   Future Plan - Dynamic Booking Time
   ```
 - Shop Car Parts
   ```
@@ -38,7 +38,7 @@
     
    As Client Side - User Can View Cars Parts and Buy Using Online Payment Only.
    
-   Future Upgrade - Cart!!!
+   Future Plan - Cart!!!
   ```
 - Hotel Booking
   ```
@@ -48,7 +48,7 @@
   
   Hotel Also Has Review Model Where Users can Review On Hotel.
   
-  Future Upgrade - Dynamic Booking Time
+  Future Plan - Dynamic Booking Time
   ```
 - Forum
   ```
@@ -59,6 +59,8 @@
   
   Users Can also Query For GetMyPosts. 
   Where Only Post Which User Has Written Will Be queried.
+  
+  Future Plan -Announcement / Events As advertisement.
   ```
 - Blog
   ```
@@ -76,7 +78,15 @@
   User has option of forget Password - changed Password After Logged-In.
   Update Pic,Details and Upon adding Driving Licence He/She Will Be given access to book car.
   
+  Future Plan - Making User experience better with passportJS.
   ```
+ -ToDo
+ ```
+  User Can List Todo With Untitled/Titled
+  
+  Only Todo of Upcoming Will Be shown
+ Future Upgrade - On Viewing Current Day's Todo Previous Day Will Be deleted.
+ ```
  - Social Media
   ```
   Here User's Who Have Account On EDD will be Given Access To Have Social Media Account.
@@ -105,6 +115,8 @@
     While His Friends Can Comment/reply on comment also.
     
   User Can also chat with There Friends Privately.    
+  
+  Future Plan - Activity Log / Private Account!!
   ```
 
 ## Quick Start Guide
