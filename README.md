@@ -15,14 +15,14 @@
 
 - Car Rental
   ```
-  -GET:
     Get Car Details
     Get Full Details Of Individual Car
       -Populated With List Of Available Cars.
-  ```
-  ```
-  - POST:
-      Add New Car To DataBase
+      Only Admin/Employee can Add Car Details. And Attach Cars to it.
+      Atttached cars Are populated on viewing Individual car as Available cars.
+      If the User Tries To Add Or Do Anything With Admin Rights He Will Get Message Of Not Allowed.
+    
+    As Client Side - User Can View Cars With Filter-Sort And By Default Page With 6 Items/Cars Will Displayed(Pagination is also There)
   ```
 - Shop Car Parts
 - Hotel Booking
