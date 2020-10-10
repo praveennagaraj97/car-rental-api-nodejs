@@ -1,17 +1,11 @@
 # EXPLORE DREAM AND DISCOVER
 
-![Required Node version](https://img.shields.io/node/v/hexo)
 
 > A fast and simple Project, powered by [Node.js](https://nodejs.org).
-> ![alt text](https://www.dataintensity.com/assets/images/partners/logos/mongodb.png)
+
 
 [Collection](https://www.getpostman.com/collections/21474c792d4a24e1ea8e) |PostMan Collection
 
-[API](https://frozen-bayou-43847.herokuapp.com/api/v1/ExploreDreamDiscover) |Heroku Link (use In PostMan)
-
-[CLIENT_SIDE](https://frozen-bayou-43847.herokuapp.com) | Heroku Link
-
-[CLIENT_SIDE](https://guarded-anchorage-39467.herokuapp.com) | Heroku Link (ENTERTAINMENT)
 
 ## OverView
 
