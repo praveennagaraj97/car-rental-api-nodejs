@@ -23,8 +23,6 @@
    As Client Side - User Can View Cars With Filter-Sort And
    By Default Page With 6 Items/Cars Will be Displayed.
    And User Can Book Car Using Stripe API - And Cash Booking Also Available.
-
-   Future Plan - Dynamic Booking Time
   ```
 
 - Shop Car Parts
@@ -36,20 +34,6 @@
    If the User Tries To Add Or Do Anything With Admin Rights He Will Get Message Of Not Allowed.
 
    As Client Side - User Can View Cars Parts and Buy Using Online Payment Only.
-
-   Future Plan - Cart!!!
-  ```
-
-- Hotel Booking
-
-  ```
-  Here Users Can Search For Hotels Based On Location
-  Where Users get Hotels Related To The Location By Geo-Location.
-  User Can View Rooms On Opening Any Individual Hotel Where He/She can Book Room for 1 Day. -Stripe Payment
-
-  Hotel Also Has Review Model Where Users can Review On Hotel.
-
-  Future Plan - Dynamic Booking Time
   ```
 
 - Forum
@@ -63,7 +47,6 @@
   Users Can also Query For GetMyPosts.
   Where Only Post Which User Has Written Will Be queried.
 
-  Future Plan -Announcement / Events As advertisement.
   ```
 
 - Blog
@@ -85,7 +68,6 @@
   User has option of forget Password - changed Password After Logged-In.
   Update Pic,Details and Upon adding Driving Licence He/She Will Be given access to book car.
 
-  Future Plan - Making User experience better with passportJS.
   ```
 
   -ToDo
@@ -94,22 +76,6 @@
  User Can List Todo With Untitled/Titled
 
  Only Todo of Upcoming Will Be shown
-Future Upgrade - On Viewing Current Day's Todo Previous Day Will Be deleted.
-```
-
-- EDD-ENTERTAINMENT
-
-```
-Here User's Who Have Account On EDD and also who have booked the car or hotel in EDD,
-will be Given Access To EDD-ENTERTAINMENT which includes.
-
-- Radio Player
-- Video Player
-- Music Player
-
-Upon Successful booking of Car or Hotel by User,
-User Will Recieve Mail which has the link for EDD-ENTERTAINMENT.
-
 ```
 
 - Social Media
@@ -146,8 +112,6 @@ While His Friends Can Comment/reply on comment also.
 
 User Can also chat with There Friends Privately.
 
-Future Plan - Activity Log / Private Account!!
-
 ````
 
 ## Quick Start Guide
@@ -167,11 +131,9 @@ $ npm start
 ## New things used Apart From Node/Express/Mongoose/.....So on!
 
 ```
-For Images - Google Cloud Platform(GCP)
+For Storage - Google Cloud Platform(GCP)
     If there is new Entry into image structure. new Folder Will be created
     To Avoid Space When User Uploads More than 1 Image Duplicacy will be checked.
-    Only Images can Be Uploaded.
-For Client - Server or v^s axios
 Socket.io for chat
 Pug as template Engine
 Stripe For Payment.
